@@ -66,24 +66,24 @@ function rules_page_activate()
  $lang->load('rules_page');
 	
 	$rulespage = array(
-		'name' => 'rules_page',
-  'title'          => ''.$lang->rules_page_Setting_0_Title.'', 
-  'description'    => ''.$lang->rules_page_Setting_0_Description.'',
-		'disporder' => '403',
-		'isdefault' => '0'
+		'name'           => 'rules_page',
+                'title'          => ''.$lang->rules_page_Setting_0_Title.'', 
+                'description'    => ''.$lang->rules_page_Setting_0_Description.'',
+		'disporder'      => '403',
+		'isdefault'      => '0'
 		);
 		
 	$group['gid'] = $db->insert_query('settinggroups', $rulespage);
 	$gid = $db->insert_id();
 	
 	$ruleslist = array(
-		'name' => 'rules_list',
-  'title'          => ''.$lang->rules_page_Setting_1_Title.'', 
-  'description'    => ''.$lang->rules_page_Setting_1_Description.'',
-		'optionscode' => 'textarea',
-		'value' =>       ''.$lang->rules_page_Setting_1_Value.'',
-		'disporder' => '1',
-		'gid' => intval($gid)
+		'name'           => 'rules_list',
+                'title'          => ''.$lang->rules_page_Setting_1_Title.'', 
+                'description'    => ''.$lang->rules_page_Setting_1_Description.'',
+		'optionscode'    => 'textarea',
+		'value'          => ''.$lang->rules_page_Setting_1_Value.'',
+		'disporder'      => '1',
+		'gid'            => intval($gid)
 		);
 		
 	$db->insert_query('settings', $ruleslist);
